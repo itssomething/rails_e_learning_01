@@ -14,3 +14,23 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+
+$(document).on("turbolinks:load", function() {
+  $("form").on("click", ".add_fields", function(event) {
+    var regexp, time;
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data("id"), "g");
+    // $(".question").append($(this).data("fields").replace(regexp, time));
+    $(this).parent().append($(this).data("fields").replace(regexp, time));
+    return event.preventDefault() ;
+  });
+
+  $("form").on("click", ".remove_record", function(event) {
+    $(this).prev("input[type=hidden]").val("1");
+    $(this).closest("div.step").hide();
+    return event.preventDefault() ;
+  });
+});

@@ -1,0 +1,15 @@
+<div class = "question">
+  <%= f.label :content, t(".content_question"), class: "field-label question-label" %>
+  <%= f.text_field :content, class: "form-control field-input" %>
+
+  <div>
+    <%= f.label :multi_correct, t(".multi"), class: "field-label" %>
+    <%= f.check_box :multi_correct, {}, "yes", "no" %>
+  </div>
+
+  <%= f.fields_for :answers do |ff| %>
+    <%= render "answer", f: ff %>
+  <% end %>
+
+  <%= link_to_add_row(t(".add_answer"), f, :answers, class: "btn btn-primary btn-small") %>
+</div>

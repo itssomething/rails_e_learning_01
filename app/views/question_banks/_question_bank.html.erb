@@ -1,0 +1,6 @@
+<tr>
+  <td><%= question_bank.name %></td>
+  <td><%= link_to question_bank.name, question_bank_path(question_bank) %></td>
+  <td><%= question_bank.category_id %></td>
+  <td><%= link_to "Detele", question_bank_path(question_bank), method: :delete %></td>
+</tr>

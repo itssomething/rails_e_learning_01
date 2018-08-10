@@ -1,0 +1,6 @@
+<div class="answer">
+  <%= f.label :content, t(".content_answer"), class: "field-label answer-label" %>
+  <%= f.text_field :content, class: "form-control field-input" %>
+  <%= f.label :correctness, t(".correct"), class: "field-label" %>
+  <%= f.check_box :correctness, {}, "true", "false" %>
+</div>
