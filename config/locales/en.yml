@@ -1,5 +1,15 @@
 en:
+  layouts:
+    header:
+      home: "Home"
+      e_learning: "E-learning"
   question_banks:
+    index:
+      question_banks: "Question banks list"
+      bank_name: "Bank name"
+      link: "Link"
+      category: "Category"
+      delete: "Delete"
     new:
       add_question: "Add question"
       submit: "Submit"
@@ -18,4 +28,12 @@ en:
   categories:
     new:
       submit: "Submit"
+    index:
+      categories_list: "Category list"
   hello: "Hello world"
+  static_pages:
+    home:
+      new_question_bank: "New question bank"
+      question_bank_list: "Question bank list"
+      new_category: "New category"
+      category_list: "Category list"

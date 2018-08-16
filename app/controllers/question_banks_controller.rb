@@ -5,10 +5,6 @@ class QuestionBanksController < ApplicationController
     @question_banks = QuestionBank.all
   end
 
-  def show
-    @questions = @question_bank.questions
-  end
-
   def new
     @question_bank = QuestionBank.new
     @question_bank.questions.build
@@ -23,6 +19,10 @@ class QuestionBanksController < ApplicationController
       flash[:warning] = t ".bank_error"
       render :new
     end
+  end
+
+  def show
+    @questions = @question_bank.questions
   end
 
   def edit; end

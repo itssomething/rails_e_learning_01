@@ -4,12 +4,19 @@
     <title>RailsELearning01</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", media: "all",
+      "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application",
+      "data-turbolinks-track": "reload" %>
   </head>
 
   <body>
+    <%= render "layouts/header" %>
+    <div class = "container-fluid">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %> flash"><%= value %></div>
+      <% end %>
     <%= yield %>
+    </div>
   </body>
 </html>
