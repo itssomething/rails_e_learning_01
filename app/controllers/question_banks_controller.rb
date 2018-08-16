@@ -1,5 +1,5 @@
 class QuestionBanksController < ApplicationController
-  before_action :find_question_bank, only: [:edit, :update, :show, :destory]
+  before_action :find_question_bank, only: [:edit, :update, :show, :destroy]
 
   def index
     @question_banks = QuestionBank.all
