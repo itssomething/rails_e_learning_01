@@ -22,7 +22,7 @@ class QuestionBanksController < ApplicationController
   end
 
   def show
-    @questions = @question_bank.questions
+    @questions = @question_bank.questions.includes :answers
   end
 
   def edit; end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_10_034236) do
+ActiveRecord::Schema.define(version: 2018_08_16_162636) do
 
   create_table "answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
@@ -45,6 +45,10 @@ ActiveRecord::Schema.define(version: 2018_08_10_034236) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "exam_id"
+    t.bigint "user_id"
+    t.index ["exam_id"], name: "index_lessons_on_exam_id"
+    t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
   create_table "question_banks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -104,9 +108,10 @@ ActiveRecord::Schema.define(version: 2018_08_10_034236) do
 
   add_foreign_key "answers", "questions"
   add_foreign_key "exams", "question_banks"
+  add_foreign_key "lessons", "exams"
+  add_foreign_key "lessons", "users"
   add_foreign_key "question_banks", "categories"
   add_foreign_key "questions", "question_banks"
-  add_foreign_key "results", "answers"
   add_foreign_key "results", "lessons"
   add_foreign_key "results", "questions"
   add_foreign_key "word_lists", "users"

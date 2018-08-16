@@ -9,12 +9,13 @@
       <h5><%= t ".add_question" %></h5>
 
       <div class = "fields">
-        <%= f.fields_for :questions do |ff| %>
-          <%= render "question", f: ff %>
+        <%= f.fields_for :questions do |question| %>
+          <%= render "question_fields", f: question %>
         <% end %>
       </div>
       <div>
-        <%= link_to_add_row(t(".add_question"), f, :questions, class: "btn btn-primary btn-small") %>
+        <%= link_to_add_association(t(".add_question"), f, :questions,
+          class: "btn btn-primary btn-small") %>
       </div>
       <div>
         <%= f.submit t(".submit"), class: "btn btn-primary btn-lg submit-button" %>

@@ -2,7 +2,7 @@
   <div class="col-md-2">
   </div>
   <div class="col-md-7">
-    <% @question_bank.questions.each_with_index do
+    <% @questions.each_with_index do
       |question, index| %>
       <div class="row">
         <b><%= t ".question" %> <%= index + 1 %></b>.
@@ -11,7 +11,7 @@
       <% question.answers.each.with_index(1) do |answer, index| %>
         <div class="row">
           <%= index %>.
-          <% if answer.correctness == "true" %>
+          <% if answer.correctness == "correct" %>
             <b class="correct-answer"><%= answer.content %></b>
           <% else %>
             <%= answer.content %>

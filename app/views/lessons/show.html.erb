@@ -1,0 +1,18 @@
+<div class="row full-width">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-7">
+    <% @questions.each_with_index do |question, index| %>
+      <div class="row">
+        <b><%= t ".question" %> <%= index + 1 %></b>.
+        <%= question.content %>
+      </div>
+      <% question.answers.each_with_index do |answer, index| %>
+        <div class="row">
+          <%= index + 1 %>.
+          <%= answer.content %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

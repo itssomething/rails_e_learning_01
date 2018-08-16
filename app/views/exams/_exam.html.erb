@@ -1,4 +1,5 @@
 <tr>
   <td><%= link_to exam.name, exam_path(exam) %></td>
   <td><%= link_to exam.question_bank.name, question_bank_path(exam.question_bank) %></td>
+  <td><%= link_to t(".create_test"), lessons_path(exam_id: exam.id), method: :post %></td>
 </tr>

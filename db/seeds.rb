@@ -29,3 +29,10 @@ questions.each do |question|
     ])
   end
 end
+
+# 20.times do
+#   User.create!([
+#     {name: Faker::Name.name,
+#     email: Faker::Internet.email}
+#   ])
+# end
