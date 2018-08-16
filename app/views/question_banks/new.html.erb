@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <%= form_for @question_bank do |f| %>
+      <div class="field">
+        <%= f.label :name, t(".name"), class: "field-label" %>
+        <%= f.text_field :name, class: "form-control field-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :category, t(".category"), class: "field-label" %>
+        <%= f.collection_select :category, Category.all, :id, :name,
+          class: "dropdown" %>
+      </div>
+
+      <h5><%= t ".add_question" %></h5>
+
+      <div id="questions">
+        <%= f.fields_for :questions do |question| %>
+          <%= render "question_fields", f: question %>
+        <% end %>
+        <div class="links">
+          <%= link_to_add_association(t(".add_question"), f, :questions,
+            class: "btn btn-primary btn-small") %>
+        </div>
+      </div>
+
+
+      <%= f.submit t(".submit"), class: "btn btn-primary btn-lg
+        submit-button" %>
+    <% end %>
+  </div>
+<div>
