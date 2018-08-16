@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :question_banks
   resources :categories
+  resources :exams
 end

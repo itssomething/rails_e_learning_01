@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <%= form_for @exam do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :name, t(".name"), class: "field-label" %>
+      <%= f.text_field :name, class: "form-control field-input" %>
+
+      <%= f.label :question_bank_id, t(".question_bank"), class: "field-label" %>
+      <%= f.collection_select :question_bank_id, QuestionBank.all, :id, :name,
+        class: "dropdown" %>
+      <br>
+      <%= f.label :duration, t(".duration"), class: "field-label" %>
+      <%= f.number_field :duration, class: "form-control field-input" %>
+
+      <%= f.label :limit_chance, t(".limit_chance"), class: "field-label" %>
+      <%= f.number_field :limit_chance, class: "form-control field-input" %>
+
+      <%= f.label :question_numbers, t(".question_numbers"), class: "field-label" %>
+      <%= f.number_field :question_numbers, class: "form-control field-input" %>
+
+      <%= f.label :min_to_pass, t(".min_to_pass"), class: "field-label" %>
+      <%= f.number_field :min_to_pass, class: "form-control field-input" %>
+
+      <%= f.submit t(".submit"), class: "btn btn-primary btn-lg
+        submit-button" %>
+    <% end %>
+  </div>
+</div>

@@ -37,3 +37,9 @@ en:
       question_bank_list: "Question bank list"
       new_category: "New category"
       category_list: "Category list"
+  exams:
+    index:
+      exam_list: "Exam list"
+      name: "Name"
+      question_bank: "Question banks"
+      delete: "Delete"
